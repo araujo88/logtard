@@ -9,7 +9,7 @@
 #include <ctime>
 #include <iomanip>
 
-namespace tpt
+namespace logtard
 {
     class ConsoleLogger : public ILogger
     {
