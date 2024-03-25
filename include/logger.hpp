@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace tpt
+namespace logtard
 {
 
     // Define the LogLevel enum to specify the severity of the log messages.
