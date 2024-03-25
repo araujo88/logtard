@@ -9,10 +9,13 @@
 #include <ctime>
 #include <iomanip>
 
-namespace logtard
+namespace tpt
 {
     class ConsoleLogger : public ILogger
     {
+    private:
+        std::string logLevelToString(LogLevel level);
+
     public:
         virtual void log(const std::string &message, LogLevel level, const char *file = nullptr, int line = 0) override;
         virtual void debug(const std::string &message) override;
