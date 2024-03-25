@@ -3,11 +3,6 @@
 #define CONSOLE_LOGGER_H_
 
 #include "logger.hpp"
-#include <iostream>
-#include <string>
-#include <chrono>
-#include <ctime>
-#include <iomanip>
 
 namespace logtard
 {

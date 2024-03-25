@@ -1,22 +1,23 @@
 #include "../include/logger.hpp"
 
-using namespace logtard;
-
-std::string Logger::logLevelToString(LogLevel level)
+namespace logtard
 {
-    switch (level)
+    std::string Logger::logLevelToString(LogLevel level)
     {
-    case LogLevel::DEBUG:
-        return "DEBUG";
-    case LogLevel::INFO:
-        return "INFO";
-    case LogLevel::WARNING:
-        return "WARNING";
-    case LogLevel::ERROR:
-        return "ERROR";
-    case LogLevel::CRITICAL:
-        return "CRITICAL";
-    default:
-        return "UNKNOWN";
+        switch (level)
+        {
+        case LogLevel::DEBUG:
+            return "DEBUG";
+        case LogLevel::INFO:
+            return "INFO";
+        case LogLevel::WARNING:
+            return "WARNING";
+        case LogLevel::ERROR:
+            return "ERROR";
+        case LogLevel::CRITICAL:
+            return "CRITICAL";
+        default:
+            return "UNKNOWN";
+        }
     }
 }

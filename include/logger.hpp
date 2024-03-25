@@ -1,7 +1,12 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
+#include <iostream>
 #include <string>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <fstream>
 
 namespace logtard
 {
