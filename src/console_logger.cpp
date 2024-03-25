@@ -1,6 +1,6 @@
 #include "../include/console_logger.hpp"
 
-using namespace logger;
+using namespace logtard;
 
 void ConsoleLogger::log(const std::string &message, LogLevel level, const char *file, int line)
 {
