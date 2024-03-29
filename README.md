@@ -13,8 +13,9 @@ The Logtard Logging Library provides a flexible and easy-to-use logging system f
 
 ### Prerequisites
 
-- C++20 compiler (GCC, Clang, MSVC, etc.)
+- C++11 compiler (GCC, Clang, MSVC, etc.)
 - Make (optional for building examples)
+- CMake (optional)
 
 ### Installation
 
@@ -41,6 +42,13 @@ cd logtard
 logtard::ConsoleLogger logger;
 LOG_INFO(logger, "This is an informational message.");
 LOG_ERROR(logger, "This is an error message.");
+```
+
+## Building project with CMake
+
+```cpp
+cmake -S . -B build
+cmake --build build
 ```
 
 ## Extending Logtard

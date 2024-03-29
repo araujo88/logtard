@@ -1,5 +1,5 @@
 CC=g++
-CC_FLAGS=-g -Wall -Wpedantic -Wextra -std=c++20
+CC_FLAGS=-g -Wall -Wpedantic -Wextra -std=c++11
 
 SRC_DIR=src
 HDR_DIR=include
