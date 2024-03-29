@@ -11,14 +11,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Add include directories
 include_directories(include)
 
-# Can manually add the sources using the set command as follows:
-# set(SOURCES src/main.cpp src/logger.cpp src/console_logger.cpp src/file_logger.cpp)
-
-# However, the file(GLOB...) allows for wildcard additions:
+# Define source files
 file(GLOB SOURCES "src/*.cpp")
 
-# Add the executable
-add_executable(logtard ${SOURCES})
+# Instead of add_executable, use add_library to create a static or shared library
+# For a static library, use:
+add_library(logtard STATIC ${SOURCES})
 
-# If you have any libraries to link you can use the target_link_libraries command
-# target_link_libraries(logtard PRIVATE library_name)
+# For a shared library, use:
+# add_library(logtard SHARED ${SOURCES})
