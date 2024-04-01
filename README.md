@@ -13,7 +13,7 @@ The Logtard Logging Library provides a flexible and easy-to-use logging system f
 
 ### Prerequisites
 
-- C++11 compiler (GCC, Clang, MSVC, etc.)
+- C++17 compiler (GCC, Clang, MSVC, etc.)
 - Make (optional for building examples)
 - CMake (optional)
 - Gtest (optional for testing)
