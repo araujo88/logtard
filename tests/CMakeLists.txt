@@ -22,7 +22,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # Now you can safely link Google Test's targets
-add_executable(logtard_test console_logger_test.cpp)  # Replace some_test_file.cpp with your actual test file(s)
+add_executable(logtard_test console_logger_test.cpp file_logger_test.cpp)  # Replace some_test_file.cpp with your actual test file(s)
 target_link_libraries(logtard_test gtest_main logtard) # Assuming 'logtard' is your library's target name
 
 # If your project or tests require threading, link against Threads::Threads
