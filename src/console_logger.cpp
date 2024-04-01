@@ -37,7 +37,7 @@ namespace logtard
         std::cout << colorCode << "[" << std::put_time(&now_tm, "%Y-%m-%d %H:%M:%S") << "] "
                   << "[" << levelStr << "]";
 
-        if (file)
+        if (file != nullptr)
         {
             std::cout << " [" << file << ":" << line << "]";
         }
