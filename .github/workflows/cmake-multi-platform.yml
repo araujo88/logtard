@@ -39,15 +39,26 @@ jobs:
           cmakeVersion: "3.21.0"
           ninjaVersion: "1.10.2"
 
+      - name: Set reusable strings
+        # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
+        id: strings
+        shell: bash
+        run: |
+          echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+
       - name: Configure CMake
         # Note: No need to specify compilers for CMake. Let CMake auto-detect the compiler.
         run: |
-          cmake -B "${{ github.workspace }}/build" -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -S "${{ github.workspace }}"
+          cmake -B ${{ steps.strings.outputs.build-output-dir }}
+          -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
+          -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -S ${{ github.workspace }}
         shell: bash
 
       - name: Build
         run: |
-          cmake --build ${{ github.workspace }}/build --config ${{ matrix.build_type }}
+          cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
         shell: bash
 
       - name: Test
