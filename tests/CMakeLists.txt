@@ -7,6 +7,19 @@ project(logtard)
 # Find the Google Test package
 find_package(GTest REQUIRED)
 
+# Include FetchContent module
+include(FetchContent)
+
+# Declare GoogleTest as a fetch content
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        e2239ee6043f73722e7aa812a459f54a28552929 # Use latest commit hash or prefer a stable release tag
+)
+
+# Make GoogleTest available for use
+FetchContent_MakeAvailable(googletest)
+
 # Include Google Test and the directories where your project headers are located
 include_directories(${GTEST_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
