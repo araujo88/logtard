@@ -9,8 +9,9 @@ The Logtard Logging Library provides a flexible and easy-to-use logging system f
 
 - **Multiple Log Levels:** Supports `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL` log levels to suit different verbosity needs.
 - **Colored Output:** Enhances log readability in the console with colored log levels.
-- **Extensible Design:** Designed with extensibility in mind, allowing for the implementation of additional loggers (e.g., file logger, network logger) by extending the base `Logger` class.
+- **Extensible Design:** Designed with extensibility in mind, allowing for the implementation of additional loggers by extending the base `Logger` class.
 - **Macro-based Logging:** Simplifies logging syntax with macros for different log levels.
+- **File Logging Support:** Introduces the `FileLogger` class for easy logging to files, enabling persistent log storage and advanced log management strategies.
 
 ## Getting Started
 
@@ -34,6 +35,8 @@ cd logtard
 
 ### Usage
 
+#### Console Logging
+
 1. Include the `ConsoleLogger` in your C++ file:
 
 ```cpp
@@ -46,6 +49,22 @@ cd logtard
 logtard::ConsoleLogger logger;
 LOG_INFO(logger, "This is an informational message.");
 LOG_ERROR(logger, "This is an error message.");
+```
+
+#### File Logging
+
+1. Include the `FileLogger` in your C++ file:
+
+```cpp
+#include "file_logger.hpp"
+```
+
+2. Create an instance of `FileLogger`, specifying the log file path:
+
+```cpp
+logtard::FileLogger logger("application.log");
+LOG_INFO(logger, "This is an informational message logged to a file.");
+LOG_ERROR(logger, "This is an error message logged to a file.");
 ```
 
 ## Building project with CMake
@@ -65,4 +84,4 @@ Contributions are welcome! Please feel free to submit pull requests, report bugs
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://raw.githubusercontent.com/araujo88/logtard/main/LICENSE) file for details.
