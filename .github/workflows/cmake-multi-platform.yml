@@ -42,7 +42,7 @@ jobs:
       - name: Configure CMake
         # Note: No need to specify compilers for CMake. Let CMake auto-detect the compiler.
         run: |
-          cmake -B ${{ github.workspace }}/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -S ${{ github.workspace }}
+          cmake -B "${{ github.workspace }}/build" -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -S "${{ github.workspace }}"
         shell: bash
 
       - name: Build
