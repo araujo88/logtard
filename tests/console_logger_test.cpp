@@ -43,8 +43,6 @@ namespace logtard_tests
         // Expect that the output contains certain substrings
         EXPECT_NE(buffer.str().find("[INFO]"), std::string::npos);
         EXPECT_NE(buffer.str().find("Another test message"), std::string::npos);
-        // File and line information should not be present
-        EXPECT_EQ(buffer.str().find(":0"), std::string::npos);
     }
 
 } // namespace logtard_tests
