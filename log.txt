@@ -1,5 +1,0 @@
-[2024-03-25 07:03:24] [INFO] [src/main.cpp:7] This is an informational message.
-[2024-03-25 07:03:24] [DEBUG] [src/main.cpp:8] This is a debug message.
-[2024-03-25 07:03:24] [ERROR] [src/main.cpp:9] This is an error message.
-[2024-03-25 07:03:24] [WARNING] [src/main.cpp:10] This is a warning message.
-[2024-03-25 07:03:24] [CRITICAL] [src/main.cpp:11] This is a critical message.

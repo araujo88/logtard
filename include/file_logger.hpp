@@ -12,6 +12,7 @@ namespace logtard
         std::ofstream logFile;
 
     public:
+        FileLogger();
         FileLogger(const std::string &filePath);
         ~FileLogger();
         virtual void log(const std::string &message, logtard::LogLevel level, const char *file, int line) override;

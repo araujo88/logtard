@@ -9,6 +9,8 @@ file(GLOB SOURCES "src/*.cpp")
 add_library(logtard STATIC ${SOURCES})
 # add_library(logtard SHARED ${SOURCES})
 
+add_executable(logtard_bin ${SOURCES})
+
 target_include_directories(logtard PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Optional: Set version properties for shared libraries

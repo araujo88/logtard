@@ -2,6 +2,15 @@
 
 namespace logtard
 {
+    FileLogger::FileLogger()
+    {
+        logFile.open("log.txt", std::ios::out | std::ios::app);
+        if (!logFile.is_open())
+        {
+            std::cerr << "Failed to open log file: log.txt" << std::endl;
+        }
+    }
+
     FileLogger::FileLogger(const std::string &path)
     {
         logFile.open(path, std::ios::out | std::ios::app); // Open for writing in append mode
