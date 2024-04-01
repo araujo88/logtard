@@ -39,7 +39,7 @@ namespace logtard
         logFile << "[" << std::put_time(&now_tm, "%Y-%m-%d %H:%M:%S") << "] "
                 << "[" << levelStr << "] ";
 
-        if (file)
+        if (file != nullptr)
         {
             logFile << "[" << file << ":" << line << "] ";
         }

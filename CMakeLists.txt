@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(logtard VERSION 1.0)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 file(GLOB SOURCES "src/*.cpp")
@@ -26,3 +26,9 @@ install(TARGETS logtard
     RUNTIME DESTINATION bin # For Windows DLLs
 )
 install(DIRECTORY include/ DESTINATION include)
+
+# Enable testing with CMake
+enable_testing()
+
+# Include the directory where the test code is located
+add_subdirectory(tests)
