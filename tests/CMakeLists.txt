@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Include FetchContent module
 include(FetchContent)
 
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+
 # Declare GoogleTest as a fetch content
 FetchContent_Declare(
   googletest
