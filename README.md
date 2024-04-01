@@ -1,5 +1,8 @@
 # Logtard Logging Library
 
+[![license](https://img.shields.io/badge/license-MIT-green)](https://raw.githubusercontent.com/araujo88/logtard/main/LICENSE)
+[![build](https://github.com/araujo88/logtard/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=main)](https://github.com/araujo88/logtard/actions/workflows/cmake-multi-platform.yml)
+
 The Logtard Logging Library provides a flexible and easy-to-use logging system for C++ applications. It supports multiple log levels and can be extended to log messages to various outputs, with the default implementation focusing on console output with colored log levels for enhanced readability.
 
 ## Features
