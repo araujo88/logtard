@@ -1,11 +1,9 @@
-# Set the minimum required version of CMake
 cmake_minimum_required(VERSION 3.14)
+project(logtard_test)
 
-# Project name
-project(logtard)
-
-# Find the Google Test package
-find_package(GTest REQUIRED)
+# Set the C++ standard you're using
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Include FetchContent module
 include(FetchContent)
@@ -13,21 +11,20 @@ include(FetchContent)
 # Declare GoogleTest as a fetch content
 FetchContent_Declare(
   googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        e2239ee6043f73722e7aa812a459f54a28552929 # Use latest commit hash or prefer a stable release tag
+  URL https://github.com/google/googletest/archive/refs/tags/release-1.11.0.zip
 )
 
 # Make GoogleTest available for use
 FetchContent_MakeAvailable(googletest)
 
-# Include Google Test and the directories where your project headers are located
-include_directories(${GTEST_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# Now you can safely link Google Test's targets
+add_executable(logtard_test console_logger_test.cpp)  # Replace some_test_file.cpp with your actual test file(s)
+target_link_libraries(logtard_test gtest_main logtard) # Assuming 'logtard' is your library's target name
 
-# Add your test executable
-add_executable(logtard_test console_logger_test.cpp)
-
-# Link Google Test and your project's library (if applicable)
-target_link_libraries(logtard_test gtest gtest_main logtard pthread) # Added gtest_main here
+# If your project or tests require threading, link against Threads::Threads
+find_package(Threads REQUIRED)
+target_link_libraries(logtard_test Threads::Threads)
 
 # Add the tests to CMake's testing framework
-add_test(NAME logtard_test COMMAND logtard_test)
+include(GoogleTest)
+gtest_discover_tests(logtard_test)
