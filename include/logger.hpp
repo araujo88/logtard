@@ -7,6 +7,7 @@
 #include <ctime>
 #include <iomanip>
 #include <fstream>
+#include <mutex>
 
 namespace logtard
 {
@@ -25,6 +26,7 @@ namespace logtard
     class Logger
     {
     protected:
+        std::mutex logMutex;
         std::string logLevelToString(LogLevel level);
 
     public:

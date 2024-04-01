@@ -21,6 +21,8 @@ namespace logtard
 
     void FileLogger::log(const std::string &message, logtard::LogLevel level, const char *file, int line)
     {
+        std::lock_guard<std::mutex> guard(logMutex);
+
         if (!logFile.is_open())
         {
             std::cerr << "Attempt to log to an unopened file." << std::endl;
